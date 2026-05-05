@@ -1,0 +1,79 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\JAYDIP> docker -a ps
+unknown shorthand flag: 'a' in -a
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+PS C:\Users\JAYDIP> docker ps --a
+unknown flag: --a
+
+Usage:  docker ps [OPTIONS]
+
+Run 'docker ps --help' for more information
+PS C:\Users\JAYDIP> docker ps -a 
+CONTAINER ID   IMAGE                        COMMAND                  CREATED        STATUS                 
+    PORTS     NAMES
+8b697a760de3   nginx                        "/docker-entrypoint.…"   24 hours ago   Exited (0) 24 hours ago              eloquent_boyd
+b452ee37c8cb   nginx                        "/docker-entrypoint.…"   24 hours ago   Exited (0) 24 hours ago              jolly_pike
+06736c64e42e   ubuntu                       "/bin/bash"              9 days ago     Exited (137) 9 days ago              testt
+b8f07e8a60ab   ubuntu                       "sleep 1000"             9 days ago     Exited (0) 9 days ago                test
+75161ec59503   httpd                        "httpd-foreground"       9 days ago     Exited (0) 9 days ago                file1
+6962b7922401   ubuntu                       "bash"                   9 days ago     Exited (0) 9 days ago                jovial_tu
+ac359ceacff3   mysql:8.1                    "docker-entrypoint.s…"   9 days ago     Exited (137) 9 days ago              mydata
+d610ed7d50ca   ubuntu                       "bash"                   9 days ago     Exited (0) 9 days ago                frosty_carver
+d14050bfa0ac   f071cbf97a6e                 "docker-entrypoint.s…"   9 days ago     Exited (0) 9 days ago                DB-app1
+7187b081a811   f071cbf97a6e                 "docker-entrypoint.s…"   10 days ago    Exited (0) 10 days ago               DB-app
+d532119d6135   imrishusingh1/nodejsserver   "node main.js"           10 days ago    Exited (137) 10 days ago             adoring_mendeleev
+71322b08cd99   imrishusingh1/nodejsserver   "node main.js"           10 days ago    Exited (137) 10 days ago             admiring_zhukovsky
+51f3c8af56f1   hello-world                  "/hello"                 10 days ago    Exited (0) 10 days ago               peaceful_satoshi
+2a81ea869c56   mysql                        "docker-entrypoint.s…"   10 days ago    Exited (137) 10 days ago             blissful_williamson
+6e7b0562d117   mysql                        "docker-entrypoint.s…"   10 days ago    Exited (0) 10 days ago               intelligent_bouman
+7d2dab56b717   hello-world                  "/hello"                 10 days ago    Exited (0) 10 days ago               condescending_gauss
+a9bc437109e4   my-app                       "echo 'Hello from my…"   2 weeks ago    Exited (0) 2 weeks ago               nifty_wright
+24c394a4092f   ubuntu                       "/bin/bash"              2 weeks ago    Exited (255) 2 weeks ago             my-ubuntu-test
+e048158ba89b   mysql                        "docker-entrypoint.s…"   3 weeks ago    Created                
+              mysql-container
+28727ccb3050   ubuntu                       "bash"                   3 weeks ago    Exited (255) 3 weeks ago             pedantic_montalcini
+a6892335d5fb   331548c5249b                 "httpd-foreground"       3 weeks ago    Exited (0) 3 weeks ago               loving_elgamal
+54d57ec4c05d   331548c5249b                 "httpd-foreground"       3 weeks ago    Exited (0) 3 weeks ago               inspiring_jemison
+ccbdb18ecece   96b1e8f69ee3                 "echo 'hello jaydeep…"   5 weeks ago    Exited (0) 5 weeks ago               naughty_galileo
+PS C:\Users\JAYDIP> docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+92842f25412d: Download complete
+Digest: sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+PS C:\Users\JAYDIP> mkdir c:\app\data
+
+
+    Directory: C:\app
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        17-04-2026     12:24                data
+
+
+PS C:\Users\JAYDIP> docker run -it --name mycontainer -e APP_ENV=production -v C:\app\data:\data ubuntu/bin/bash
+Unable to find image 'ubuntu/bin/bash:latest' locally
+docker: Error response from daemon: pull access denied for ubuntu/bin/bash, repository does not exist or may require 'docker login'
+
+Run 'docker run --help' for more information
+PS C:\Users\JAYDIP> docker run -it --name mycontainer -e APP_ENV=production -v C:/app/data:/data ubuntu /bin/bash
+>>
+root@625c88e828ce:/# echo $APP_ENV
+production
+root@625c88e828ce:/# echo "hello this is my frist program">/data/test.txt
+root@625c88e828ce:/# cat/data/test.txt
+bash: cat/data/test.txt: No such file or directory
+root@625c88e828ce:/# cd /data/test.txt
+bash: cd: /data/test.txt: Not a directory
+root@625c88e828ce:/# ^C

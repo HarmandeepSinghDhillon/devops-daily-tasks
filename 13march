@@ -1,0 +1,146 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker --version
+Docker version 29.1.2, build 890dcca
+PS C:\Users\JAYDIP> docker info
+Client:
+ Version:    29.1.2
+ Context:    desktop-linux
+ Debug Mode: false
+ Plugins:
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.17.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.30.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.40.3-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.45
+    Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.2.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.28.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.0.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.5.29
+    Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.0.15
+    Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+  sandbox: Docker Sandbox (Docker Inc.)
+    Version:  v0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.18.3
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 29.1.2
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Discovered Devices:
+  cdi: docker.com/gpu=webgpu
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 1c4457e00facac03ce1d75f7b6777a7a851e5c41
+ runc version: v1.3.4-0-gd6d73eb8
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.6.87.2-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 12
+ Total Memory: 3.536GiB
+ Name: docker-desktop
+ ID: b9aa677f-af57-4df7-b6de-da80c29d2978
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Labels:
+  com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Firewall Backend: iptables
+
+PS C:\Users\JAYDIP> docker history httpd
+Error response from daemon: No such image: httpd:latest
+PS C:\Users\JAYDIP> docker pull httpd
+Using default tag: latest
+latest: Pulling from library/httpd
+4f4fb700ef54: Pull complete
+80414dfb8f15: Pull complete
+206356c42440: Pull complete
+7079f4501db6: Pull complete
+242bb693a1d3: Pull complete
+47a6bbb8d6d8: Pull complete
+ea9cd2f459bd: Download complete
+44fabeaa234c: Download complete
+Digest: sha256:96b1e8f69ee3adde956e819f7a7c3e706edef7ad88a26a491734015e5c595333
+Status: Downloaded newer image for httpd:latest
+docker.io/library/httpd:latest
+PS C:\Users\JAYDIP> 
+PS C:\Users\JAYDIP>
+PS C:\Users\JAYDIP>
+PS C:\Users\JAYDIP>
+PS C:\Users\JAYDIP> docker history httpd
+IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+PS C:\Users\JAYDIP> docker images
+                                                                                                                            i Info →   U  In Use
+IMAGE                                                                                           ID             DISK USAGE   CONTENT SIZE   EXTRA
+docker/desktop-kubernetes:kubernetes-v1.34.1-cni-v1.7.1-critools-v1.33.0-cri-dockerd-v0.3.20-1-debian
+                                                                                                12d6673564e0        592MB          185MB        
+docker/desktop-storage-provisioner:v2.0                                                         115d77efe6e2       59.2MB         17.3MB        
+docker/desktop-vpnkit-controller:dc331cb22850be0cdd97c84a9cfecaf44a1afb6e                       7ecf567ea070         47MB         10.8MB        
+httpd:latest                                                                                    96b1e8f69ee3        177MB         47.6MB        
+PS C:\Users\JAYDIP> docker run httpd echo "hello jaydeep!"
+hello jaydeep!
+PS C:\Users\JAYDIP>
+PS C:\Users\JAYDIP> docker run --name my_container httpd echo "hello world!"
+hello world!

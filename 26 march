@@ -1,0 +1,31 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker pull httpd
+Using default tag: latest
+latest: Pulling from library/httpd
+ec781dee3f47: Pull complete
+a1897530540b: Pull complete
+4f4fb700ef54: Pull complete
+753dca1c3a38: Pull complete
+5184cf4f524b: Pull complete
+09625190bc81: Pull complete
+7a18bfe8c86e: Download complete
+512f7c550d54: Download complete
+Digest: sha256:331548c5249bdeced0f048bc2fb8c6b6427d2ec6508bed9c1fec6c57d0b27a60     
+Status: Downloaded newer image for httpd:latest
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message   
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message   
+[Thu Mar 26 06:53:50.120121 2026] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.66 (Unix) configured -- resuming normal operations
+[Thu Mar 26 06:53:50.120759 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'PS C:\Users\JAYDIP> echo $MY_VAR
+PS C:\Users\JAYDIP> docker run -it -e MY_VAR=complete ubuntu bash
+root@28727ccb3050:/# ^C
+root@28727ccb3050:/# ^[[200~PS C:\Users\JAYDIP> docker run -it -e MY_VAR=complete ubuntu bash
+bash: $'\E[200~PS': command not found
+root@28727ccb3050:/# root@28727ccb3050:/# ^C
+bash: root@28727ccb3050:/#: No such file or directory
+root@28727ccb3050:/# echo my_cont
+my_cont
+root@28727ccb3050:/#

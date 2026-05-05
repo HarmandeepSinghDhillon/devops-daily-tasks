@@ -1,0 +1,153 @@
+the command
+docker run -d --name mysql-container -p 3307:3306 `
+  -e MYSQL_ROOT_PASSWORD=root123 `
+  -e MYSQL_DATABASE=collage `
+  -e MYSQL_USER=admin `
+  -e MYSQL_PASSWORD=admin123 `
+  mysql:8.0
+
+
+description of the command 
+
+- docker run -d → Runs the container in detached mode (in the background).
+- --name mysql-container → Assigns the container a custom name (mysql-container) so you can reference it easily.
+- -p 3307:3306 → Maps host port 3307 to container port 3306.
+- This lets you connect to MySQL on your computer using localhost:3307, while inside the container MySQL still listens on its default port 3306.
+- -e MYSQL_ROOT_PASSWORD=root123 → Sets the root user password to root123.
+- -e MYSQL_DATABASE=collage → Creates a new database named collage automatically when the container starts.
+- -e MYSQL_USER=admin → Creates a new MySQL user named admin.
+- -e MYSQL_PASSWORD=admin123 → Sets the password for the admin user to admin123.
+- mysql:8.0 → Specifies the image to use: the official MySQL image, version 8.0.
+
+
+
+
+
+
+
+cmd
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker run -d \                                          
+>>   --name my-mysql-db \
+>>   -p 3306:3306 \
+>>   -e MYSQL_ROOT_PASSWORD="r00t 123" \
+>>   -e MYSQL_DATABASE=app_database \
+>>   -e MYSQL_USER=app_user \
+>>   -e MYSQL_PASSWORD=secret_password \ mysql
+At line:2 char:5
++   --name my-mysql-db \
++     ~
+Missing expression after unary operator '--'.
+At line:2 char:5
++   --name my-mysql-db \
++     ~~~~
+Unexpected token 'name' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\JAYDIP> docker run -d \
+>>   --name my-mysql-db \
+>>   -p 3306:3306 \
+>>   -e MYSQL_ROOT_PASSWORD="r00t 123" \
+>>   -e MYSQL_DATABASE=app_database \
+>>   -e MYSQL_USER=app_user \
+>>   -e MYSQL_PASSWORD=secret_password \
+>>   mysql
+At line:2 char:5
++   --name my-mysql-db \
++     ~
+Missing expression after unary operator '--'.
+At line:2 char:5
++   --name my-mysql-db \
++     ~~~~
+Unexpected token 'name' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\JAYDIP> docker run -d --name mysql-container - 3306:3306 -e mysql_root_password=root123 -e mysql-database=collage -e  mysql_user=admin -e mysql_password=admin123mysql:^C
+PS C:\Users\JAYDIP> docker run -d \
+>>   --name mysql-container \           
+>>   -p 3306:3306 \                  
+>>   -e MYSQL_ROOT_PASSWORD=root123 \
+>>   -e MYSQL_DATABASE=collage \        
+>>   -e MYSQL_USER=admin \
+>>   -e MYSQL_PASSWORD=admin123 \
+>>   mysql
+At line:2 char:5
++   --name mysql-container \
++     ~
+Missing expression after unary operator '--'.
+At line:2 char:5
++   --name mysql-container \
++     ~~~~
+Unexpected token 'name' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingExpressionAfterOperator
+
+PS C:\Users\JAYDIP> ^C
+PS C:\Users\JAYDIP> docker run -d --name mysql-container -p 3306:3306 `
+>>   -e MYSQL_ROOT_PASSWORD=root123 `
+>>   -e MYSQL_DATABASE=collage `
+>>   -e MYSQL_USER=admin `
+>>   -e MYSQL_PASSWORD=admin123 `
+>>   mysql
+Unable to find image 'mysql:latest' locally
+latest: Pulling from library/mysql
+f7eb4be426a1: Pulling fs layer
+f7eb4be426a1: Download complete
+660dee12630a: Pull complete
+4e3633ebbb73: Pull complete
+dc0ae5ec7f3c: Pull complete
+7ef200aee2ac: Pull complete
+c75b6f683cbd: Pull complete
+d4c7048d1cf1: Pull complete
+fc3bc5fe2030: Pull complete
+ad38d99426c5: Pull complete
+32f88ec2712b: Download complete
+697c144a0375: Download complete
+Digest: sha256:24e450bbd24f621c71b10404c946cc9ea1cbb0e6e7464b2be2de5193dcf1d05b
+Status: Downloaded newer image for mysql:latest
+e048158ba89bbf51fb88b027c04bf5c8fc04a4f39256fd5e83cb6b89761937d6
+docker: Error response from daemon: ports are not available: exposing port TCP 0.0.0.0:3306 -> 127.0.0.1:0: listen tcp 0.0.0.0:3306: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+Run 'docker run --help' for more information
+PS C:\Users\JAYDIP> ^C
+PS C:\Users\JAYDIP> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\JAYDIP> ^C
+PS C:\Users\JAYDIP> docker run -d --name mysql-container -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=collage -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin123 mysql80                                                                    
+Unable to find image 'mysql80:latest' locally                                          
+docker: Error response from daemon: pull access denied for mysql80, repository does not exist or may require 'docker login'
+                                       
+Run 'docker run --help' for more information
+PS C:\Users\JAYDIP> ^C
+PS C:\Users\JAYDIP> docker run -d --name mysql-container -p 3307:3306 `
+>>   -e MYSQL_ROOT_PASSWORD=root123 `
+>>   -e MYSQL_DATABASE=collage `
+>>   -e MYSQL_USER=admin `
+>>   -e MYSQL_PASSWORD=admin123 `
+>>   mysql:8.0
+Unable to find image 'mysql:8.0' locally
+8.0: Pulling from library/mysql
+0940ecf5daec: Download complete
+10ee8ef3b9fc: Pulling fs layer                                                                                                      
+0940ecf5daec: Pull complete
+cd8097e7c26b: Pull complete
+440208b3f29f: Pull complete
+6375ec02106f: Pull complete
+c3b8cfb10b41: Pull complete
+771773a1fe7a: Pull complete
+5915b0e5580c: Pull complete
+60c3210ab1f6: Pull complete
+de0490608ca2: Download complete                                                                                                     
+2f1dcce71f1f: Download complete
+Digest: sha256:64756cc92f707eb504496d774353990bcb0f6999ddf598b6ad188f2da66bd000
+Status: Downloaded newer image for mysql:8.0
+docker: Error response from daemon: Conflict. The container name "/mysql-container" is already in use by container "e048158ba89bbf51fb88b027c04bf5c8fc04a4f39256fd5e83cb6b89761937d6". You have to remove (or rename) that container to be able to reuse that name.     
+
+Run 'docker run --help' for more information
+PS C:\Users\JAYDIP>

@@ -1,0 +1,20 @@
+1. The Docker Client (docker)
+The Client is the primary way you interact with Docker. When you run commands like docker build, docker pull, or docker run, the client sends these instructions to the Docker Daemon (dockerd).
+
+The client can communicate with a daemon on the same system or a remote machine using a REST API over UNIX sockets or a network interface.
+
+2. The Docker Host (The Engine)
+This is the machine where the Docker daemon runs. It provides a complete environment to execute your applications.
+
+Docker Daemon (dockerd): The "brain" of the operation. It listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes.
+
+Images: Read-only templates used to create containers. Think of them as the "Class" in Java terms.
+
+Containers: The runnable instances of images. Think of them as the "Object" created from the class. They are isolated from each other and the host.
+
+Storage & Networking: The host manages how containers talk to each other and where they store persistent data (like your MySQL database in your Banking System project).
+
+3. The Docker Registry
+As we discussed, this is the "library" where images are stored.
+
+The Daemon communicates with the Registry to pull images that aren't available locally or push new images you've built.

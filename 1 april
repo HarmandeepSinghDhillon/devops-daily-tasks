@@ -1,0 +1,37 @@
+
+
+task 1
+run ubandu container 
+pass  -e COLLAGE=CSE
+show -e $COLLAGE
+stop the container the sheck what happend 
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker run -it --name my-ubuntu-test -e COLLAGE=CSE ubuntu
+root@24c394a4092f:/# echo $COLLAGE
+CSE
+root@24c394a4092f:/# docker ps -a
+bash: docker: command not found
+root@24c394a4092f:/# exit
+exit
+PS C:\Users\JAYDIP> docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS                        PORTS     NAMES
+24c394a4092f   ubuntu         "/bin/bash"              2 minutes ago   Exited (127) 11 seconds ago         
+    my-ubuntu-test
+e048158ba89b   mysql          "docker-entrypoint.s…"   5 days ago      Created                             
+    mysql-container
+28727ccb3050   ubuntu         "bash"                   6 days ago      Exited (255) 5 days ago             
+    pedantic_montalcini
+a6892335d5fb   httpd          "httpd-foreground"       6 days ago      Exited (0) 6 days ago               
+    loving_elgamal
+54d57ec4c05d   httpd          "httpd-foreground"       6 days ago      Exited (0) 6 days ago               
+    inspiring_jemison
+ccbdb18ecece   96b1e8f69ee3   "echo 'hello jaydeep…"   2 weeks ago     Exited (0) 2 weeks ago              
+    naughty_galileo
+PS C:\Users\JAYDIP>
+

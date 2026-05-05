@@ -1,0 +1,64 @@
+task 2
+
+
+
+PS C:\Users\JAYDIP\OneDrive\Desktop\docker> docker build -t my-app .
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+            environment-variable.
+
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM ubuntu:latest
+ ---> 186072bba1b2
+Step 2/2 : CMD ["echo", "Hello from my-app!"]
+ ---> Running in 051a6890946b
+ ---> Removed intermediate container 051a6890946b
+ ---> 1f3570fd3c5b
+Successfully built 1f3570fd3c5b
+Successfully tagged my-app:latest
+PS C:\Users\JAYDIP\OneDrive\Desktop\docker> docker images
+                                                                i Info →   U  In Use
+IMAGE                               ID             DISK USAGE   CONTENT SIZE   EXTRA
+docker/desktop-kubernetes:kubernetes-v1.34.1-cni-v1.7.1-critools-v1.33.0-cri-dockerd-v0.3.20-1-debian
+                                    12d6673564e0        592MB          185MB        
+docker/desktop-storage-provisioner:v2.0
+                                    115d77efe6e2       59.2MB         17.3MB        
+docker/desktop-vpnkit-controller:dc331cb22850be0cdd97c84a9cfecaf44a1afb6e
+                                    7ecf567ea070         47MB         10.8MB        
+httpd:latest                        331548c5249b        177MB         47.6MB    U   
+my-app:latest                       1f3570fd3c5b        117MB         29.7MB        
+mysql:8.0                           64756cc92f70       1.08GB          247MB        
+mysql:latest                        24e450bbd24f       1.27GB          283MB    U   
+registry.k8s.io/coredns/coredns:v1.12.1
+                                    e8c262566636        101MB         22.4MB        
+registry.k8s.io/etcd:3.6.4-0        e36c08168342        273MB         74.3MB        
+registry.k8s.io/kube-apiserver:v1.34.1
+                                    b9d7c117f8ac        118MB         27.1MB        
+registry.k8s.io/kube-controller-manager:v1.34.1
+                                    2bf47c1b01f5        101MB         22.8MB        
+registry.k8s.io/kube-proxy:v1.34.1
+                                    913cc83ca0b5        102MB           26MB        
+registry.k8s.io/kube-scheduler:v1.34.1
+                                    6e9fbc4e25a5       73.5MB         17.4MB        
+registry.k8s.io/pause:3.10          ee6521f290b2       1.06MB          318kB        
+registry.k8s.io/pause:3.10.1        278fb9dbcca9       1.06MB          318kB        
+ubuntu:latest                       186072bba1b2        119MB         31.7MB    U   
+PS C:\Users\JAYDIP\OneDrive\Desktop\docker> docker run --env-file .env my-app
+Hello from my-app!
+PS C:\Users\JAYDIP\OneDrive\Desktop\docker>
+
+
+
+
+set varible on host 
+expor tgAPP_POS+RT =8080(ubuntu 
+powershell 
+
+
+
+successer and predesserr
+
+
+
+mst 
+prims Kruskal algo

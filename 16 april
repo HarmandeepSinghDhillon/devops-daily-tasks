@@ -1,0 +1,22 @@
+docker pull mongo
+The command docker pull mongo downloads the official MongoDB Docker image from Docker Hub to your local machine. Because you didn't specify a version tag (like mongo:6.0), Docker will automatically download the latest version.
+
+Here is what you typically need to do next to actually run the database.
+
+Starting your MongoDB Container
+Once the image finishes downloading, you can spin up a MongoDB container using the docker run command. Here is a standard, secure way to start it:
+
+Bash
+docker run -d --name my-mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=secretpassword mongo
+What these flags do:
+-d: Runs the container in "detached" mode, meaning it runs quietly in the background, freeing up your terminal.
+
+--name my-mongodb: Assigns a custom, recognizable name to your container.
+
+-p 27017:27017: Maps the default MongoDB port (27017) from inside the container to port 27017 on your local machine so your apps can connect to it.
+
+-e MONGO_INITDB_ROOT_USERNAME=admin: An environment variable that sets up your root database user.
+
+-e MONGO_INITDB_ROOT_PASSWORD=secretpassword: An environment variable that sets the password for your root user.
+
+mongo: Tells Docker which image to use to build this container.

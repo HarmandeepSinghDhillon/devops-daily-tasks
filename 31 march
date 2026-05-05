@@ -1,0 +1,13 @@
+The command docker exec -it mysql-container mysq0l -uroot -proot123 is used to open an interactive terminal session
+inside a running container to execute MySQL commands directly. By using the docker exec instruction, you are telling the Docker 
+engine to start a new process within the environment of the container named mysql-container.
+The -it flag is a combination of --interactive (keeping STDIN open) and --tty (allocating a pseudo-terminal),
+which together allow you to type SQL queries and receive real-time feedback as if you were logged directly into a physical server.
+Once inside the container, the command invokes the mysql client utility. The -u flag specifies the username—in this case, root—while
+the -p flag is followed immediately by the password root123 without any spaces. While this method is convenient for quick access, it
+is worth noting that including the password directly in the command string can leave it visible in your shell's command history, which
+may pose a security risk in shared environments.
+To ensure this command works, the mysql-container must currently be in a "running" state; if the container has been stopped or removed
+(using the docker stop or docker rm commands you mentioned earlier), the execution will fail. This specific command logs you into the 
+global MySQL prompt, allowing you to perform administrative tasks like creating databases, managing users, or querying any schema currently
+hosted within that specific container instance.

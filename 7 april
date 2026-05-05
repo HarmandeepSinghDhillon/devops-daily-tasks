@@ -1,0 +1,35 @@
+run a docker con host to port "DB-app" based on the "mongodb" imges and expose port 8082 on the container 
+docker pull mongo
+docker run -d -p 8082:27017 --name DB-app mongo
+
+
+
+cmd 
+PS C:\Users\JAYDIP> docker ps    
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\JAYDIP> docker images
+                                                                                                                            i Info →   U  In Use
+IMAGE                                                                                           ID             DISK USAGE   CONTENT SIZE   EXTRA
+docker/desktop-kubernetes:kubernetes-v1.34.1-cni-v1.7.1-critools-v1.33.0-cri-dockerd-v0.3.20-1-debian
+                                                                                                12d6673564e0        592MB          185MB        
+docker/desktop-storage-provisioner:v2.0                                                         115d77efe6e2       59.2MB         17.3MB        
+docker/desktop-vpnkit-controller:dc331cb22850be0cdd97c84a9cfecaf44a1afb6e                       7ecf567ea070         47MB         10.8MB        
+hello-world:latest                                                                              452a468a4bf9       25.9kB         9.49kB    U   
+httpd:latest                                                                                    331548c5249b        177MB         47.6MB    U   
+imrishusingh1/nodejsserver:latest                                                               8c2a6d9205c1        423MB           98MB    U   
+mongo:latest                                                                                    f071cbf97a6e        1.3GB          341MB    U   
+my-app:latest                                                                                   1f3570fd3c5b        117MB         29.7MB    U   
+mysql:8.0                                                                                       64756cc92f70       1.08GB          247MB        
+mysql:latest                                                                                    24e450bbd24f       1.27GB          283MB    U   
+registry.k8s.io/coredns/coredns:v1.12.1                                                         e8c262566636        101MB         22.4MB        
+registry.k8s.io/etcd:3.6.4-0                                                                    e36c08168342        273MB         74.3MB        
+registry.k8s.io/kube-apiserver:v1.34.1                                                          b9d7c117f8ac        118MB         27.1MB        
+registry.k8s.io/kube-controller-manager:v1.34.1                                                 2bf47c1b01f5        101MB         22.8MB        
+registry.k8s.io/kube-proxy:v1.34.1                                                              913cc83ca0b5        102MB           26MB        
+registry.k8s.io/kube-scheduler:v1.34.1                                                          6e9fbc4e25a5       73.5MB         17.4MB        
+registry.k8s.io/pause:3.10                                                                      ee6521f290b2       1.06MB          318kB        
+registry.k8s.io/pause:3.10.1                                                                    278fb9dbcca9       1.06MB          318kB        
+ubuntu:latest                                                                                   186072bba1b2        119MB         31.7MB    U   
+PS C:\Users\JAYDIP> docker run -d -p 8082:27017 --name DB-app1 mongo
+d14050bfa0ac453c01a12ae075b6482703a61b48e3a7802654b0ca850b586341                                                                                
+PS C:\Users\JAYDIP>

@@ -1,0 +1,41 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+>> 
+Error response from daemon: No such container: 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+Error response from daemon: No such container: 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+>> 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+Error response from daemon: No such container: 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 : The term '63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224' 
+is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:2 char:1
++ 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (63de1b6c3391d6a...8f99187beaf3224:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224^C
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+Error response from daemon: No such container: 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+PS C:\Users\JAYDIP> docker run -it --name my_project_container ubuntu /bin/bash
+root@6965668402c6:/# mkdir/project
+bash: mkdir/project: No such file or directory
+root@6965668402c6:/# mkdir /project
+root@6965668402c6:/# echo "This is our container interaction with our host machine." > /project/report.txt
+root@6965668402c6:/# cat /project/report.txt
+This is our container interaction with our host machine.
+root@6965668402c6:/# ls /project
+report.txt
+root@6965668402c6:/# docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+bash: docker: command not found
+root@6965668402c6:/# exit
+exit
+PS C:\Users\JAYDIP> docker exec -it 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224 mkdir /project
+Error response from daemon: No such container: 63de1b6c3391d6a4687e00e375ca9cfe4685e959c2b774deb8f99187beaf3224
+PS C:\Users\JAYDIP>
